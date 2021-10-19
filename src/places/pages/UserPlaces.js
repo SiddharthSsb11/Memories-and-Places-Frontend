@@ -9,7 +9,7 @@ const DUMMY_PLACES = [
     title: 'Vietnam Jungle',
     description: 'Dense Asian jungle can be a "dark and forbidding place"',
     imageUrl: 'https://static1.thetravelimages.com/wordpress/wp-content/uploads/2018/08/china-chinese.fansshare.com_.jpg?q=50&fit=crop&w=740&h=556&dpr=1.5',
-    address: '2Số 854, ấp 1, Nam Cát Tiên, Tân Phú, Đồng Nai, Vietnam',
+    address: 'Hamlet 4, Nam Cat Tien, Tan Phu District, Nam Cat Tien Vietnam',
     location: {
       lat: 11.752252284264282, 
       lng: 107.46413427724953,

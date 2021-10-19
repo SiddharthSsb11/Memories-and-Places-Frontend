@@ -44,7 +44,7 @@ export const useForm = (initialInputs, initialFormValidity) => {
     });
   }, []);
 
-  const setFormData = useCallback((inputData, formValidity) => {//for updating place info only//workaround
+  const setFormData = useCallback((inputData, formValidity) => {//for updating place info//also for signup form name i/p//workaround
     dispatch({
       type: 'SET_DATA',
       inputs: inputData,
