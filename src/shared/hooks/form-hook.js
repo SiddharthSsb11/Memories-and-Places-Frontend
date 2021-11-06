@@ -35,7 +35,7 @@ export const useForm = (initialInputs, initialFormValidity) => {
     isValid: initialFormValidity
   });
 
-  const inputHandler = useCallback((id, value, isValid) => {
+  const inputHandler = useCallback((id, value, isValid) => {//imput.js
     dispatch({
       type: 'INPUT_CHANGE',
       value: value,
