@@ -83,7 +83,9 @@ const UpdatePlace = () => {
         }
       );
       history.push('/' + auth.userId + '/places');
-    } catch (err) {}
+    } catch (err) {
+      console.log(err.message, err, 'Error being handled by BE server, logging updating place error FE')
+    }
   };
 
   if (isLoading) {
