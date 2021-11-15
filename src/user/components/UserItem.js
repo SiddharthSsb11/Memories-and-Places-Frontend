@@ -8,12 +8,14 @@ import './UserItem.css';
 
 
 const UserItem = props => {
+
+    console.log(props.image, 'props.image userItem')
   return (
     <li className="user-item">
         <Card>
             <Link to={`/${props.id}/places`}> 
                 <div className="user-item__image">
-                    <Avatar Avatar image = {props.image} alt = {props.name}></Avatar>
+                    <Avatar Avatar image ={`http://localhost:8000/${props.image}`} alt = {props.name}></Avatar>
                 </div>
                 <div className="user-item__info">
                     <h2>{props.name}</h2>
