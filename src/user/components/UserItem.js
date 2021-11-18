@@ -9,7 +9,7 @@ import './UserItem.css';
 
 const UserItem = props => {
 
-    console.log(props.image, 'props.image userItem')
+    //console.log(props.image, 'props.image userItem')
   return (
     <li className="user-item">
         <Card>

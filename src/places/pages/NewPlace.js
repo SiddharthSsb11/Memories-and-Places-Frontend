@@ -65,7 +65,9 @@ const NewPlace = () => {
       formData.append('address', formState.inputs.address.value);
       formData.append('creator', auth.userId);
       formData.append('image', formState.inputs.image.value);//identifier image must be image only just like id
-      await sendRequest('http://localhost:8000/api/places', 'POST', formData);
+      await sendRequest('http://localhost:8000/api/places', 'POST', formData,{
+        Authorization: 'Bearer ' + auth.token
+      });
       history.push("/"); //programmatically navigating to a new homeUrl on succesfull req submitting &creating a place in db
     } catch (err) {
       console.log(err, "Logging creatPlace error FE");
