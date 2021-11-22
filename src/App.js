@@ -1,22 +1,32 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import React, { useState, useCallback, useEffect, Suspense } from "react";
+import { Route, Switch, Redirect,/* useHistory */ } from "react-router-dom";
+//import axios from 'axios';
 
-import Users from "./user/pages/Users";
-import NewPlace from "./places/pages/NewPlace";
-import UserPlaces from "./places/pages/UserPlaces";
-import UpdatePlace from "./places/pages/UpdatePlace";
+//import Users from "./user/pages/Users";
+//import NewPlace from "./places/pages/NewPlace";
+//import UserPlaces from "./places/pages/UserPlaces";
+//import UpdatePlace from "./places/pages/UpdatePlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import Auth from "./user/pages/Auth";
+import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
+//import Auth from "./user/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
 
 //import SideDrawer from "./shared/components/Navigation/"
 
+const Users = React.lazy(() => import("./user/pages/Users"));
+const NewPlace = React.lazy(() => import("./places/pages/NewPlace"));
+const UpdatePlace = React.lazy(() => import("./places/pages/UpdatePlace"));
+const UserPlaces = React.lazy(() => import("./places/pages/UserPlaces"));
+const Auth = React.lazy(() => import("./user/pages/Auth"));
+
 let logoutTimer;
 
-const App= () => {
+const App = () => {
   const [token, setToken] = useState(false);
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
+
+  //const history = useHistory();
 
   const login = useCallback((uid, token, expirationDate) => {
     setToken(token);
@@ -25,11 +35,11 @@ const App= () => {
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
     setTokenExpirationDate(tokenExpirationDate);
     localStorage.setItem(
-      'userData',
+      "userData",
       JSON.stringify({
         userId: uid,
         token: token,
-        expiration: tokenExpirationDate.toISOString()
+        expiration: tokenExpirationDate.toISOString(),
       })
     );
   }, []);
@@ -38,7 +48,17 @@ const App= () => {
     setToken(null);
     setTokenExpirationDate(null);
     setUserId(null);
-    localStorage.removeItem('userData');
+    localStorage.removeItem("userData");
+    /*     try {
+      const res = await axios({
+        method: 'GET',
+        url: 'http://localhost:8000/api/users/logout'
+      });
+      if ((res.data.status = 'success')) history.push('/');;
+    } catch (err) {
+      console.log(err.response);
+    }
+     */
   }, []);
 
   useEffect(() => {
@@ -51,13 +71,13 @@ const App= () => {
   }, [token, logout, tokenExpirationDate]);
 
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('userData'));
-    if (
-      storedData &&
-      storedData.token &&
-      new Date(storedData.expiration) > new Date()
-    ) {
-      login(storedData.userId, storedData.token, new Date(storedData.expiration));
+    const storedData = JSON.parse(localStorage.getItem("userData"));
+    if (storedData && storedData.token && new Date(storedData.expiration) > new Date()) {
+      login(
+        storedData.userId,
+        storedData.token,
+        new Date(storedData.expiration)
+      );
     }
   }, [login]);
 
@@ -101,9 +121,13 @@ const App= () => {
   return (
     <AuthContext.Provider value={{ isLoggedIn: !!token, token: token, userId: userId, login: login, logout: logout }}>
       <MainNavigation />
-      <main>{routes}</main>
+      <main> 
+        <Suspense fallback = {<div className="center"> {LoadingSpinner} </div>} > 
+          {routes} 
+        </Suspense>
+      </main>
     </AuthContext.Provider>
   );
-}
+};
 
 export default App;
