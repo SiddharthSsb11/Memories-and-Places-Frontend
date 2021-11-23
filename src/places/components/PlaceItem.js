@@ -48,6 +48,7 @@ const PlaceItem = (props) => {
   };
   //img tag b4 aws-s3
   // <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt={props.title} /> 
+  
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
