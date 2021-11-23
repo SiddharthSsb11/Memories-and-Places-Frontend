@@ -24,7 +24,7 @@ export const useHttpClient = () => {
 
         //clearing AbortControllers that belong to the current req which just completed
         activeHttpRequests.current = activeHttpRequests.current.filter(reqCtrl => reqCtrl !== httpAbortCtrl);
-        console.log(responseData, 'res.json() from server')
+        //console.log(responseData, 'res.json() from server')
         if (!response.ok) {
           throw new Error(responseData.message);
         }

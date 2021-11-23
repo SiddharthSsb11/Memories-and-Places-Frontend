@@ -71,7 +71,7 @@ const Auth = () => {
 
   const authSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log(formState.inputs, "form input states, text name password email, file image//check image enty ");
+    //console.log(formState.inputs, "form input states, text name password email, file image//check image enty ");
     //setIsLoading(true);
 
     if (isLoginMode) {
