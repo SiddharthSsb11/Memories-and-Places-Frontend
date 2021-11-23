@@ -8,14 +8,14 @@ import './UserItem.css';
 
 
 const UserItem = props => {
-
+    //{`${process.env.REACT_APP_ASSET_URL}/${props.image}`} image b4 aws-s3
     //console.log(props.image, 'props.image userItem')
   return (
     <li className="user-item">
         <Card>
             <Link to={`/${props.id}/places`}> 
                 <div className="user-item__image">
-                    <Avatar Avatar image ={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt = {props.name}></Avatar>
+                    <Avatar Avatar image ={props.image} alt = {props.name}></Avatar>
                 </div>
                 <div className="user-item__info">
                     <h2>{props.name}</h2>
