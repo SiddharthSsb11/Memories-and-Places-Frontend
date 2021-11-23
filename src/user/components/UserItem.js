@@ -9,7 +9,7 @@ import './UserItem.css';
 
 const UserItem = props => {
     //{`${process.env.REACT_APP_ASSET_URL}/${props.image}`} image b4 aws-s3
-    //console.log(props.image, 'props.image userItem')
+    console.log(props.image, props.name,'props.image userItem props.name');
   return (
     <li className="user-item">
         <Card>
