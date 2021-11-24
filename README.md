@@ -2,6 +2,42 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Features
+
+- User Profile
+- Other users places previews
+- Full featured posts creation
+- All users shared posts/places/memories
+- Map feature
+- Authenticated user can create,update and delete their posted places/memories 
+
+
+## Tech Stack
+
+
+**Client:** React, Context, 
+
+**Server:** Node, Express, AWS
+
+**Database** MongoDb, Mongoose, NoSql
+
+This repository contains the client side frontend code made using React.
+
+## Hosted/Deployed
+
+Hosted the client side frontend ( https://mern11.web.app/ ) and server side backend api(https://memories-places.herokuapp.com/) on separate servers.
+
+
+## Install Dependencies
+
+
+```bash
+npm install
+```
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
