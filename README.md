@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Memories & Places
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -36,7 +36,13 @@ Hosted the client side frontend ( https://mern11.web.app/ ) and server side back
 npm install
 ```
 
+## Seed Database
 
+Sample user login
+```bash
+ozil@test.com
+oziltest
+```
 
 ## Available Scripts
 
