@@ -37,7 +37,6 @@ Backend github repo link for the code ( https://github.com/SiddharthSsb11/Memori
 npm install
 ```
 
-## Seed Database
 
 Sample user login
 ```bash
