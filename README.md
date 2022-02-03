@@ -26,8 +26,8 @@ This repository contains the client side frontend code made using React.
 
 ## Hosted/Deployed
 
-Hosted the client side frontend ( https://mern-memories-places.web.app ) and server side backend (https://memories-places.herokuapp.com/) on separate servers. 
-Backend github repo link for the code ( https://github.com/SiddharthSsb11/Memories-and-Places-Backend ).
+Hosted the application [Deployed Web-App](https://mern-memories-places.web.app) and the backend  [Heroku-ServerSide](https://memories-places.herokuapp.com/) on separate servers. 
+Backend github repo link for the code [Server-Side](https://github.com/SiddharthSsb11/Memories-and-Places-Backend).
 
 
 ## Install Dependencies
@@ -38,7 +38,8 @@ npm install
 ```
 
 
-Sample user login
+**Sample user login**
+
 ```bash
 ozil@test.com
 oziltest
