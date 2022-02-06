@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Other users places previews
 - Full featured posts creation
 - All users shared posts/places/memories
-- Map feature
+- Map feature.
 - Authenticated user can create,update and delete their posted places/memories 
 
 
