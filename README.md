@@ -37,11 +37,11 @@ Backend github repo link for the code [Server-Side](https://github.com/Siddharth
 - Other users places previews.
 - Full featured posts creation.
 - All other users shared posts/places/memories can be seen and interacted with.
-- Map feature
-- Login/Signup as well as Logout feature is added
+- Map feature.
+- Login/Signup as well as Logout feature is added.
 - Authenticated user can create,update and delete their posted posts/places/memories.
 - Authenticated user can like and comment too. 
-- All the Memories created and Places shared are stored in the database i.e. <i>persistent</i>
+- All the Memories created and Places shared are stored in the database i.e. <i>persistent</i>.
 
 
 ## Tech Stack
