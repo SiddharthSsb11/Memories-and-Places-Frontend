@@ -1,47 +1,64 @@
 # Memories & Places
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Share the Memories you created and Places you visited with the world. 
 
+This application uses [React JS](https://reactjs.org/docs/getting-started.html) component oriented UI creation paradigm. All components are written in [JSX](https://reactjs.org/docs/jsx-in-depth.html) and ES6 style and are
+combined to get a single build for production purpose using [Webpack 5](https://webpack.js.org/concepts/).
+
+Back end is implemented using [Node JS](https://nodejs.org/en/docs), [Express JS](https://expressjs.com/en/api.html) and [MongoDB](https://docs.mongodb.com/). [Atlas](https://www.mongodb.com/cloud/atlas), the _Cloud_ version of [MongoDB](https://docs.mongodb.com/) is used.
+You can find the backend server-side code repo for this project [Server-Side Code](https://github.com/SiddharthSsb11/Memories-and-Places-Backend).
+This application is powered by [AWS-S3](https://aws.amazon.com/s3/?nc2=h_ql_prod_fs_s3).
+
+
+This is a _responsive web application_ for viewing in both Mobile and Desktop.
+
+```
+This is still a work in progress
+If you find any bugs you can report it to me.
+Pull requests are always welcome. For major changes, 
+please open an issue first to discuss what you would like to change.
+
+```
+## Hosted/Deployed
+
+Hosted the application [Deployed Web-App](https://mern-memories-places.web.app) and the backend  [Heroku-ServerSide](https://memories-places.herokuapp.com/) on separate servers. 
+Backend github repo link for the code [Server-Side](https://github.com/SiddharthSsb11/Memories-and-Places-Backend).
+
+**Sample user login**
+
+| Email | Password  |
+| -------- | --------- |
+| ozil@test.com | oziltest |
 
 ## Features
 
-- User Profile
-- Other users places previews
-- Full featured posts creation
-- All users shared posts/places/memories
-- Map feature.
-- Authenticated user can create,update and delete their posted places/memories 
+- It is a Full Stack Application. 
+- User Profile.
+- Other users places previews.
+- Full featured posts creation.
+- All other users shared posts/places/memories can be seen and interacted with.
+- Map feature
+- Login/Signup as well as Logout feature is added
+- Authenticated user can create,update and delete their posted posts/places/memories.
+- Authenticated user can like and comment too. 
+- All the Memories created and Places shared are stored in the database i.e. <i>persistent</i>
 
 
 ## Tech Stack
 
+**Client:** React 
 
-**Client:** React, Context, 
+**Server:** Node, Express
 
-**Server:** Node, Express, AWS
-
-**Database** MongoDb, Mongoose, NoSql
+**Database** MongoDb, Mongoose, AWS
 
 This repository contains the client side frontend code made using React.
-
-## Hosted/Deployed
-
-Hosted the client side frontend ( https://mern-memories-places.web.app ) and server side backend api(https://memories-places.herokuapp.com/) on separate servers.
 
 
 ## Install Dependencies
 
-
 ```bash
 npm install
-```
-
-## Seed Database
-
-Sample user login
-```bash
-ozil@test.com
-oziltest
 ```
 
 ## Available Scripts
@@ -80,33 +97,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
