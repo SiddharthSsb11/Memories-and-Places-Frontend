@@ -61,7 +61,7 @@ const PlaceItem = (props) => {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className="map-container">
-          <h2>The Map will be here soon..</h2>
+          <h3>Maps will be here soon. Feature service down temporarily.</h3>
           <Map center={props.coordinates} zoom={16} />
         </div>
       </Modal>
@@ -104,7 +104,6 @@ const PlaceItem = (props) => {
             {auth.userId === props.creatorId && (
               <Button to={`/places/${props.id}`}>EDIT</Button>
             )}
-
             {auth.userId === props.creatorId && (
               <Button danger onClick={showDeleteWarningHandler}> DELETE </Button>
             )}

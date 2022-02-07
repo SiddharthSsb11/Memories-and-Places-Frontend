@@ -13,6 +13,7 @@
     padding: 1rem;
     color: white;
     background: #44337A;
+    border: 1.5px solid black
 }
 
 .user-item a:hover,
