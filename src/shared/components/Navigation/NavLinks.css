@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
 }
 
 .nav-links li {
@@ -25,7 +26,7 @@
 .nav-links a:active,
 .nav-links a.active {
     background: #f8df00;
-    border-color: #292929;
+    border: 1px solid white;
     color: #292929;
 }
 

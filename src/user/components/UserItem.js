@@ -12,7 +12,7 @@ const UserItem = props => {
     console.log(props.image, props.name,'props.image userItem props.name');
   return (
     <li className="user-item">
-        <Card>
+        <Card className="user-item__content">
             <Link to={`/${props.id}/places`}> 
                 <div className="user-item__image">
                     <Avatar Avatar image ={props.image} alt = {props.name}></Avatar>

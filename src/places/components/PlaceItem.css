@@ -1,5 +1,6 @@
 .place-item {
     margin: 1rem 0;
+    border: 1.5px solid black;
 }
 
 .place-item__content {

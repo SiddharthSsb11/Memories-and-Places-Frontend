@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
+
 * {
   box-sizing: border-box;
 }
@@ -10,7 +11,9 @@ html {
 
 body {
   margin: 0;
-  background: #4d4d4d;
+  background-position: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(./assets/bg.png);
+  background-size: cover;
 }
 
 .slide-in-left-enter {

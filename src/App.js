@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, Suspense } from "react";
-import { Route, Switch, Redirect,/* useHistory */ } from "react-router-dom";
+import { Route, Switch, Redirect, useHistory  } from "react-router-dom";
 //import axios from 'axios';
 
 //import Users from "./user/pages/Users";
@@ -26,7 +26,7 @@ const App = () => {
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
 
-  //const history = useHistory();
+  const history = useHistory();
 
   const login = useCallback((uid, token, expirationDate) => {
     setToken(token);
@@ -59,7 +59,8 @@ const App = () => {
       console.log(err.response);
     }
      */
-  }, []);
+    history.push('/');
+  }, [history]);
 
   useEffect(() => {
     if (token && tokenExpirationDate) {

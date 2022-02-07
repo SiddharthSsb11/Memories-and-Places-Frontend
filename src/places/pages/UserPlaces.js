@@ -8,7 +8,7 @@ import { useHttpClient } from "../../shared/hooks/http-hook";
 
 const UserPlaces = () => {
 
-  const [loadedPlaces, setLoadedPlaces] = useState();
+  const [loadedPlaces, setLoadedPlaces] = useState([]);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   const params = useParams();

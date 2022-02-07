@@ -18,6 +18,7 @@ import "./PlaceForm.css";
 
 const NewPlace = () => {
   const auth = useContext(AuthContext);
+
   const history = useHistory();
 
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -68,7 +69,7 @@ const NewPlace = () => {
       await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places`, 'POST', formData,{
         Authorization: 'Bearer ' + auth.token
       });
-      history.push("/"); //programmatically navigating to a new homeUrl on succesfull req submitting &creating a place in db
+      history.push(`/${auth.userId}/places`); //programmatically navigating to a new homeUrl on succesfull req submitting &creating a place in db
     } catch (err) {
       console.log(err, "Logging creatPlace error FE");
     }
