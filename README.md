@@ -24,7 +24,7 @@ please open an issue first to discuss what you would like to change.
 
 ![Homepage](/screenshots/Homepage.png "Homepage")
 ![Myplaces](/screenshots/Myplaces.png "Myplaces")
-![form](/screenshots/form.png "form")
+![Form](/screenshots/Form.png "Form")
 
 ## Hosted/Deployed
 
