@@ -19,6 +19,13 @@ Pull requests are always welcome. For major changes,
 please open an issue first to discuss what you would like to change.
 
 ```
+
+### Few Screenshots
+
+![Homepage](/screenshots/Homepage.png "Homepage")
+![Myplaces](/screenshots/Myplaces.png "Myplaces")
+![form](/screenshots/form.png "form")
+
 ## Hosted/Deployed
 
 Hosted the application [Deployed Web-App](https://mern-memories-places.web.app) and the backend  [Heroku-ServerSide](https://memories-places.herokuapp.com/) on separate servers. 
