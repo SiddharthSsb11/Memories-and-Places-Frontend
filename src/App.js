@@ -17,6 +17,7 @@ const Users = React.lazy(() => import("./user/pages/Users"));
 const NewPlace = React.lazy(() => import("./places/pages/NewPlace"));
 const UpdatePlace = React.lazy(() => import("./places/pages/UpdatePlace"));
 const UserPlaces = React.lazy(() => import("./places/pages/UserPlaces"));
+const AllPlaces = React.lazy(() => import("./places/pages/AllPlaces"));
 const Auth = React.lazy(() => import("./user/pages/Auth"));
 
 let logoutTimer;
@@ -88,6 +89,9 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" exact>
+          <AllPlaces />
+        </Route>
+        <Route path="/users" exact>
           <Users />
         </Route>
         <Route path="/:userId/places" exact>
@@ -106,6 +110,9 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" exact>
+         <AllPlaces />
+        </Route>
+        <Route path="/users" exact>
           <Users />
         </Route>
         <Route path="/:userId/places" exact>
