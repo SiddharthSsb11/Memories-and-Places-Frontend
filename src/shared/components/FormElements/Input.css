@@ -6,6 +6,8 @@
 .form-control input,
 .form-control textarea {
     display: block;
+    color:black;
+    text-align: center;
 }
 
 .form-control label {
