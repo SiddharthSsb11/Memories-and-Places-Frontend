@@ -7,7 +7,7 @@
 .form-control textarea {
     display: block;
     color:black;
-    text-align: center;
+    text-align: left;
 }
 
 .form-control label {
