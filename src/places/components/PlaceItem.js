@@ -48,6 +48,8 @@ const PlaceItem = (props) => {
   };
   //img tag b4 aws-s3
   // <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt={props.title} /> 
+  //console.log(props.creatorId,"previos check")
+  //console.log(props.creator,"creator new add check")
   
   return (
     <React.Fragment>
@@ -94,13 +96,14 @@ const PlaceItem = (props) => {
           </div>
           <div className="place-item__info">
             <h2>{props.title}</h2>
-            <h3>{props.address}</h3>
+            {/* <h3>{props.address}</h3> */}
             <p>{props.description}</p>
           </div>
           <div className="place-item__actions">
             <Button inverse onClick={openMapHandler}>
-              VIEW ON MAP
+              VIEW ON MAP &nbsp;&#10132;
             </Button>
+
             {auth.userId === props.creatorId && (
               <Button to={`/places/${props.id}`}>EDIT</Button>
             )}

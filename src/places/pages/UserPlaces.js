@@ -10,6 +10,7 @@ const UserPlaces = () => {
 
   const [loadedPlaces, setLoadedPlaces] = useState([]);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  //const [creatorUser, setCreatorUser] = useState({});
 
   const params = useParams();
   //console.log(params, 'params obj');
@@ -19,7 +20,9 @@ const UserPlaces = () => {
     const fetchPlaces = async () => {
       try {
         const responseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/user/${userId}`);
+        //setCreatorUser(responseData.creator);
         setLoadedPlaces(responseData.places);
+        console.log(responseData)
       } catch (err) {
         console.log(err, 'logging userPlaces error FE');
       }
@@ -31,7 +34,7 @@ const UserPlaces = () => {
     setLoadedPlaces((prevPlaces) => prevPlaces.filter(place => place.id !== deletedPlaceId));
   };
   //console.log(`Places left after deleting ----- ${loadedPlaces.length}`)
-
+  //console.log(creatorUser, "user places creator obj")
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
@@ -40,7 +43,7 @@ const UserPlaces = () => {
           <LoadingSpinner />
         </div>
       )}
-      {!isLoading && loadedPlaces && <PlaceList items={loadedPlaces} onDeletePlace={placeDeletedHandler} />}
+      {!isLoading && loadedPlaces && <PlaceList items={loadedPlaces} /* userCreator={creatorUser} */ onDeletePlace={placeDeletedHandler} />}
     </React.Fragment>
   );
 };

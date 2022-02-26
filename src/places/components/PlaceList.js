@@ -17,20 +17,25 @@ const PlaceList = props => {
       </div>
     );
   }
-
+  //likest//comments//creator,
   return (
     <ul className="place-list">
       {props.items.map(place => (
-        <PlaceItem
+        <PlaceItem 
           key={place.id}
           id={place.id}
           image={place.image}
           title={place.title}
           description={place.description}
           address={place.address}
-          creatorId={place.creator}
+          creatorId={place.creator.id}  
+          creator={place.creator}
           coordinates={place.location}
           onDelete={props.onDeletePlace}
+          createdAt={place.createdAt}
+          date={place.date}
+          likes={place.likes}    
+          comments={place.comments}    
         />
       ))}
     </ul>
