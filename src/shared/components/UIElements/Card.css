@@ -1,10 +1,11 @@
 .card {
     position: relative;
-    margin: 0;
+    margin-top:0rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 7px;
-    padding: 1rem;
+    padding: 0.6rem;
     overflow: hidden;
     background: white;
     color: black;
+    width: 100%;
 }

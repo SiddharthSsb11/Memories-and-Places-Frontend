@@ -4,12 +4,20 @@
 }
 
 .authentication {
-    width: 90%;
-    max-width: 25rem;
-    margin: 1rem auto;
+    width: 60%;
+
+    margin: 0.5rem auto;    
     text-align: center;
+    padding: 1rem 2rem;
 }
 
 .authentication form {
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.authentication h2{
+    text-transform: uppercase;
+    font-size: 1.6rem; 
+    margin-bottom:4px;
+    font-weight: bold;
 }

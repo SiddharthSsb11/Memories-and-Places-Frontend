@@ -1,9 +1,9 @@
 .place-form {
     list-style: none;
     margin: 0 auto;
-    padding: 1rem;
-    width: 90%;
-    max-width: 40rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 70rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 6px;
     background: white;

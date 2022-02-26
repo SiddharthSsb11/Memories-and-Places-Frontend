@@ -1,6 +1,6 @@
 .user-item {
     margin: 1rem;
-    width: calc(45% - 2rem);
+    width: calc(45% - 0.1rem);
     min-width: 17.5rem;
 }
 
@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    padding: 1rem;
+    padding: 0.7rem;
     color: white;
     background: #44337A;
     border: 1.5px solid black
@@ -26,14 +26,18 @@
 }
 
 .user-item__image {
-    width: 4rem;
-    height: 4rem;
-    margin-right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 0.5rem;
 }
 
+
+.user-item__info{
+    margin-bottom:5px;
+}
 .user-item__info h2 {
     font-size: 1.5rem;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.35rem 0;
     font-weight: bold;
     color: #ffd900;
 }
@@ -43,6 +47,7 @@
 .user-item:hover h3,
 .user-item:active h3 {
     color: #292929;
+
 }
 
 .user-item__info h3 {
