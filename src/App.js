@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect, Suspense } from "react";
-import { Route, Switch, Redirect, useHistory  } from "react-router-dom";
+import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 //import axios from 'axios';
+import "./App.css";
 
 //import Users from "./user/pages/Users";
 //import NewPlace from "./places/pages/NewPlace";
@@ -60,12 +61,13 @@ const App = () => {
       console.log(err.response);
     }
      */
-    history.push('/');
+    history.push("/");
   }, [history]);
 
   useEffect(() => {
     if (token && tokenExpirationDate) {
-      const remainingTime = tokenExpirationDate.getTime() - new Date().getTime();
+      const remainingTime =
+        tokenExpirationDate.getTime() - new Date().getTime();
       logoutTimer = setTimeout(logout, remainingTime);
     } else {
       clearTimeout(logoutTimer);
@@ -74,7 +76,11 @@ const App = () => {
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("userData"));
-    if (storedData && storedData.token && new Date(storedData.expiration) > new Date()) {
+    if (
+      storedData &&
+      storedData.token &&
+      new Date(storedData.expiration) > new Date()
+    ) {
       login(
         storedData.userId,
         storedData.token,
@@ -110,7 +116,7 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" exact>
-         <AllPlaces />
+          <AllPlaces />
         </Route>
         <Route path="/users" exact>
           <Users />
@@ -127,14 +133,24 @@ const App = () => {
   }
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn: !!token, token: token, userId: userId, login: login, logout: logout }}>
-      <MainNavigation />
-      <main> 
-        <Suspense fallback = {<div className="center"> {LoadingSpinner} </div>} > 
-          {routes} 
-        </Suspense>
-      </main>
-    </AuthContext.Provider>
+    <div className="App">
+      <AuthContext.Provider
+        value={{
+          isLoggedIn: !!token,
+          token: token,
+          userId: userId,
+          login: login,
+          logout: logout,
+        }}
+      >
+        <MainNavigation />
+        <main>
+          <Suspense fallback={<div className="center"> {LoadingSpinner} </div>}>
+            {routes}
+          </Suspense>
+        </main>
+      </AuthContext.Provider>
+    </div>
   );
 };
 
