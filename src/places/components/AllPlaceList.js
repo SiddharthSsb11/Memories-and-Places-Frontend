@@ -36,7 +36,8 @@ const AllPlaceList = (props) => {
           date={place.date}
           like={place.likes} 
           onLike={props.onLikePlace}   
-          comments={place.comments}    
+          comment={place.comments} 
+          onComment={props.onCommentPlace}   
         />
       ))}
     </ul>

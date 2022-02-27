@@ -17,8 +17,9 @@ import { AuthContext } from "./shared/context/auth-context";
 const Users = React.lazy(() => import("./user/pages/Users"));
 const NewPlace = React.lazy(() => import("./places/pages/NewPlace"));
 const UpdatePlace = React.lazy(() => import("./places/pages/UpdatePlace"));
-const UserPlaces = React.lazy(() => import("./places/pages/UserPlaces"));
+//const UserPlaces = React.lazy(() => import("./places/pages/UserPlaces"));
 const AllPlaces = React.lazy(() => import("./places/pages/AllPlaces"));
+//const Place = React.lazy(() => import("./places/pages/Place"));
 const Auth = React.lazy(() => import("./user/pages/Auth"));
 
 let logoutTimer;
@@ -100,9 +101,7 @@ const App = () => {
         <Route path="/users" exact>
           <Users />
         </Route>
-        <Route path="/:userId/places" exact>
-          <UserPlaces />
-        </Route>
+        
         <Route path="/places/new" exact>
           <NewPlace />
         </Route>
@@ -121,9 +120,7 @@ const App = () => {
         <Route path="/users" exact>
           <Users />
         </Route>
-        <Route path="/:userId/places" exact>
-          <UserPlaces />
-        </Route>
+        
         <Route path="/auth">
           <Auth />
         </Route>

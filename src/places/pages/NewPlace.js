@@ -69,7 +69,7 @@ const NewPlace = () => {
       await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places`, 'POST', formData,{
         Authorization: 'Bearer ' + auth.token
       });
-      history.push(`/${auth.userId}/places`);
+      history.push(`/`);
     } catch (err) {
       console.log(err, "Logging creatPlace error FE");
     }

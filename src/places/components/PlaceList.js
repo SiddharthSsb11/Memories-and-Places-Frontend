@@ -29,13 +29,17 @@ const PlaceList = props => {
           description={place.description}
           address={place.address}
           creatorId={place.creator.id}  
-          creator={place.creator}
+          creatorImage={place.creator.image}
+          creatorPlacesLength={place.creator.places.length}
+          creatorName={place.creator.name}
           coordinates={place.location}
           onDelete={props.onDeletePlace}
           createdAt={place.createdAt}
           date={place.date}
-          likes={place.likes}    
-          comments={place.comments}    
+          like={place.likes.likes}    
+          onLike={props.onLikePlace}
+          comment={place.comments}  
+          onComment={props.onCommentPlace}
         />
       ))}
     </ul>
