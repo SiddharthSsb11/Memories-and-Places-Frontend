@@ -1,7 +1,7 @@
 import React from "react";
 import { Box,  } from "@chakra-ui/layout";
 import Card from "../../shared/components/UIElements/Card";
-import CommentItem from "./PlaceItem";
+import CommentItem from "./CommentItem";
 //import Button from "../../shared/components/FormElements/Button";
 
 import "./PlaceList.css";
@@ -16,17 +16,17 @@ const CommentList = (props) => {
       </div>
     );
   }
-
+  console.log(props.comments)
   return (
     <Box
       d="flex"
       flexDir="column"
-      gap="0.8em"
+      gap="0.35em"
       //py={1}
       px={2}
       alignItems="center"
       justifyContent="start"
-      maxH="14em"
+      maxH="6.1em"
       overflow="auto"
       //bg="purple.500"
       width="100%"
@@ -34,9 +34,15 @@ const CommentList = (props) => {
       //border="1px solid black">
     >
       {props.comments.map((comment) => (
-        <CommentItem 
-            key={comment.id} 
-            pid={props.placeId}        
+        <CommentItem key={comment.id} 
+            placeId={props.placeId}
+            commentId={comment.id}
+            user={comment.user}
+            text={comment.text}
+            name={comment.name}
+            image={comment.avatar}
+            date={comment.date}
+            onDelete={props.deleteComment}
         />
       ))}
     </Box>

@@ -44,7 +44,7 @@ const AllPlaces = () => {
         place.id === p.id ? { ...place, comments: p.comments } : place
       )
     );
-    //window.location.reload();
+    window.location.reload();
   };
 
   const placeDeletedHandler = (deletedPlaceId) => {
@@ -54,6 +54,14 @@ const AllPlaces = () => {
     window.location.reload();
   };
 
+  const commentDeleteHandler = (p)=>{
+   /*  setAllPlaces((prevPlaces) =>
+      prevPlaces.map((place) =>
+        place.id === p.id ? { ...place, comments: p.comments } : place
+      )
+    ); */
+    window.location.reload();
+  }
   console.log(allPlaces, "allPlaces");
 
   return (
@@ -70,6 +78,7 @@ const AllPlaces = () => {
           onLikePlace={placeLikeHandler}
           onDeletePlace={placeDeletedHandler}
           onCommentPlace={commentPlaceHandler}
+          onCommentDelete = {commentDeleteHandler}
         />
       )}
     </React.Fragment>

@@ -38,6 +38,7 @@ const AllPlaceList = (props) => {
           onLike={props.onLikePlace}   
           comment={place.comments} 
           onComment={props.onCommentPlace}   
+          deleteCommentHandler = {props.onCommentDelete}
         />
       ))}
     </ul>

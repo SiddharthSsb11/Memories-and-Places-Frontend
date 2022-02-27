@@ -3,7 +3,7 @@ import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
 import Map from "../../shared/components/UIElements/Map";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
-import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+//import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { Badge, Box, Text } from "@chakra-ui/layout";
 import {
   Image,
@@ -19,7 +19,7 @@ import { useToast } from "@chakra-ui/toast";
 import { FaRegHeart } from "react-icons/fa";
 import { CalendarIcon, SmallCloseIcon, CheckIcon } from "@chakra-ui/icons";
 import { GiMagicSwirl } from "react-icons/gi";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import {
@@ -52,9 +52,9 @@ const PlaceItemDemo = (props) => {
   const [comments, setComments] = useState([comment]); //[...comments]
   const [commentsCount, setCommentsCount] = useState(comment.length);
   //console.log(comment)
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { error, sendRequest, clearError } = useHttpClient();
 
-  const history = useHistory();
+  //const history = useHistory();
   const toast = useToast();
 
   const auth = useContext(AuthContext);
@@ -143,6 +143,17 @@ const PlaceItemDemo = (props) => {
   };
 
   const commentHandler = async () => {
+    if (!token) {
+      toast({
+        title: "Oops !! Please Login First",
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+        position: "bottom",
+      });
+      return;
+    }
+
     if (newComment && newComment.length > 0) {
       try {
         const config = {
@@ -190,7 +201,6 @@ const PlaceItemDemo = (props) => {
   console.log(comment, "comment as prop");
   console.log(comments, "comments stored");
 
-
   const [showMap, setShowMap] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
@@ -224,6 +234,10 @@ const PlaceItemDemo = (props) => {
       );
     }
   };
+
+ /*  const deleteCommentHandler = () => {
+    console.log('comment deleted');
+  }  */
 
   return (
     <React.Fragment>
@@ -419,13 +433,24 @@ const PlaceItemDemo = (props) => {
             //justifyContent="space-evenly"
             gap="0.2rem"
           >
-            <Button inverse onClick={openMapHandler}>
-              VIEW ON MAP&nbsp;&#10132;
-            </Button>
-
             {userId === props.creatorId && (
               <Button to={`/places/${props.id}`}>EDIT</Button>
             )}
+
+            <IconButton
+              variant="ghost"
+              //bg="gray.700"
+              color="purple.600"
+              size="md"
+              fontSize="5.5rem"
+              cursor="pointer"
+              fontWeight="bold"
+              _hover={{ background: "white", color: "yellow.400" }}
+              aria-label="Click on Me"
+              icon={<GiMagicSwirl className="fa-spin" />}
+              //onClick={() => console.log("magic")}
+            />
+
             {userId === props.creatorId && (
               <Button danger onClick={showDeleteWarningHandler}>
                 {" "}
@@ -494,8 +519,10 @@ const PlaceItemDemo = (props) => {
             <AccordionItem>
               <h2>
                 <AccordionButton
-                  _expanded={{ bg: "gray.700", color: "white" }}
-                  bg="gray.200"
+                  _hover={{bg:"purple.800", color:"white"}}
+                  _expanded={{ bg: "purple.800", color: "white" }}
+                  color="white"
+                  bg="purple.700"
                 >
                   <Box
                     d="flex"
@@ -506,7 +533,7 @@ const PlaceItemDemo = (props) => {
                     fontWeight="bold"
                   >
                     All Comments
-                    <Text fontSize="xs" color="gray.500" marginRight="1.2rem">
+                    <Text fontSize="xs" color="gray.400" marginRight="1.2rem">
                       No. of {commentsCount === 1 ? "Comment" : "Comments"}:{" "}
                       {commentsCount}
                     </Text>
@@ -515,7 +542,7 @@ const PlaceItemDemo = (props) => {
                 </AccordionButton>
               </h2>
               <AccordionPanel>
-                <CommentList comments={comments} placeId={props.id} />
+                <CommentList comments={comment} placeId={props.id} deleteComment={props.deleteCommentHandler}/>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
