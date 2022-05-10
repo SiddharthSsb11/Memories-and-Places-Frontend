@@ -21,10 +21,11 @@ please open an issue first to discuss what you would like to change.
 ```
 
 ### Few Screenshots
-
-![Homepage](/screenshots/Homepage.png "Homepage")
+![Homepage](/screenshots/Home.png "Homepage")
+![Users](/screenshots/Homepage.png "Users")
 ![Myplaces](/screenshots/Myplaces.png "Myplaces")
 ![Form](/screenshots/Form.png "Form")
+
 
 ## Hosted/Deployed
 
